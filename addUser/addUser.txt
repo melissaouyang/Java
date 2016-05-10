@@ -1,0 +1,33 @@
+= sudo grouped GroupA
+[2016-05-10 09:35]
+sudo grouped GroupA
+sudo grouped GroupB
+
+sudo useradd –G GroupA user1
+sudo useradd –G GroupA user2
+
+sudo useradd –G GroupB user3
+sudo useradd user4
+
+cat /etc/group
+
+mkdir myFolder
+
+sudo chown user3:GroupA myFolder
+sudo chmod 0570 myFolder
+sudo su user1
+ls myFolder
+touch myFolder/file1
+exit
+sudo su user2
+ls myFolder
+touch myFolder/file2
+exit
+sudo su user3
+ls myFolder
+touch myFolder/file3 // false
+exit
+sudo su user4
+ls myFolder // false
+touch myFolder/file4  // false
+
