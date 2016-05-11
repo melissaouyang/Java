@@ -1,7 +1,7 @@
 = sudo grouped GroupA
 [2016-05-10 09:35]
-sudo addgroup GroupA
-sudo addgroup GroupB
+sudo groupadd GroupA
+sudo groupadd GroupB
 
 sudo useradd –G GroupA user1
 sudo useradd –G GroupA user2
